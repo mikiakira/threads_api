@@ -28,7 +28,9 @@
 
 ---
 
-## ファイル構成
+## ファイル一覧と使い方
+
+### ファイル一覧
 
 * ThreadsClass.php … Thread API を扱うクラス
 * const.php .........  定数ファイル（管理画面で取得した ID、リダイレクト URL 等）
@@ -36,6 +38,15 @@
 * redirectCallback.php … リダイレクトでコールバックを取得し、トークンを保存する
 * post.php … 投稿するファイル
 * token_viewer.php … 現在のデータベースに保存されている情報を簡易的に確認する
+
+---
+
+### 使い方
+
+* const.php に管理画面で取得した ID、リダイレクト URL 等を設定
+* authorize.php を実行し、承認ウィンドゥを開き、承認ボタンを押す
+* リダイレクトでコールバックを取得し、トークンが保存されます
+* post.php を実行し、投稿を行います
 
 ---
 
@@ -75,6 +86,13 @@
 ### 投稿
 
 ![alt text](image-1.png)
+
+---
+
+## 参考サイト
+
+* [Threads API](https://developers.facebook.com/docs/threads): 公式ドキュメント
+* [Meta for Developers](https://developers.facebook.com/apps/): 開発者向けのページ
 
 ---
 
