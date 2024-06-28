@@ -13,6 +13,7 @@ class threads
     public $code = null;
     public $endPointUri = 'https://graph.threads.net/';
     public $version = 'v1.0/';
+    public $bufferDays = BUFFER_DAYS; // トークンの期限を判定する日数（7日前）
     public $result = null;
     public $creation_id = null;
     public $dbh = null;
@@ -59,12 +60,24 @@ class threads
         if (!$this->limit_date) {
             return false;
         }
-        // limit_date が現在日時よりも前の場合は true を返す
+
+        // トークンの有効期限を判定する日数を取得
+        $bufferDays = $this->bufferDays;
+
+        // 現在日時を取得
         $currentDate = new DateTime();
+
+        // limit_date を DateTime オブジェクトに変換
         $limitDate = new DateTime($this->limit_date);
+
+        // limit_date から指定した日数を引く
+        $limitDate->modify("-$bufferDays days");
+
+        // 現在日時が調整後の limit_date よりも後の場合は true を返す
         if ($currentDate > $limitDate) {
             return true;
         }
+
         return false;
     }
 
