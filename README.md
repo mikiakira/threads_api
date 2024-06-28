@@ -2,7 +2,7 @@
 
 ## 概要
 
-* PHP で「Threads API」を扱うための API です
+* これは PHP で「Threads API」を扱うためのクラスとサンプルファイルです
 
 ---
 
@@ -79,7 +79,7 @@
 
 ### 承認
 
-![alt text](image.png)
+![alt text](image-2.png)
 
 * 短期アクセストークン
   * 発行から1時間有効
