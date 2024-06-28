@@ -2,7 +2,7 @@
 
 ## 概要
 
-* PHP で「Threads API」扱うための API です
+* PHP で「Threads API」を扱うための API です
 
 ---
 
